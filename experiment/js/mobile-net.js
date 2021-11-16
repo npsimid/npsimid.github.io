@@ -6,7 +6,7 @@ async function loadModel() {
 	loader.style.display = "block";
 	modelName = "mobilenet";
 	model = undefined;
-	model = await tf.loadLayersModel('https://github.com/npsimid/npsimid.github.io/blob/master/experiment/mobilenet/model.json');
+	model = await tf.loadLayersModel('https://npsimid.github.io/experiment/mobilenet/model.json');
 	loader.style.display = "none";
 	load_button.disabled = true;
 	load_button.innerHTML = "Loaded Model";
