@@ -18,6 +18,7 @@ $("#select-file-image").change(function() {
   	document.getElementById("predict-box").style.display = "table-cell";
   	document.getElementById("prediction").innerHTML = "Click predict to find my label!";
     renderImage(this.files[0]);
+    console.log("S-a incarcat..");
 });
 
 function renderImage(file) {
@@ -83,7 +84,7 @@ function preprocessImage(image, modelName) {
 
 function loadDemoImage() {
 	document.getElementById("predict-box").style.display = "table-cell";
-  	document.getElementById("prediction").innerHTML = "Click predict to find my label!";
+  document.getElementById("prediction").innerHTML = "Click predict to find my label!";
 	document.getElementById("select-file-box").style.display = "table-cell";
 	document.getElementById("predict-list").innerHTML = "";
 
