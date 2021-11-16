@@ -39,7 +39,7 @@ $("#predict-button").click(async function () {
 	}
 	console.log(model);
 	let image  = document.getElementById("test-image");
-	let tensor = preprocessImage(image, modelName);
+	let tensor = preprocessImage(image, model);
 
 	let predictions = await model.predict(tensor).data();
 	let results = Array.from(predictions)
