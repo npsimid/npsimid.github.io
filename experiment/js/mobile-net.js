@@ -87,7 +87,7 @@ function loadDemoImage() {
 	document.getElementById("select-file-box").style.display = "table-cell";
 	document.getElementById("predict-list").innerHTML = "";
 
-	base_path = "dataset/test/test_image_"
+	base_path = "./test/test_image_"
 	maximum = 4;
 	minimum = 1;
 	var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
