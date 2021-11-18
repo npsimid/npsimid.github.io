@@ -124,6 +124,7 @@ async function predict() {
 var image = document.getElementById("test-image")  
 var tensorImg =   tf.browser.fromPixels(image).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
   predictions = await model1.predict(tensorImg).data();
+  console.log(predictions);
 var results = Array.from(predictions)
 		.map(function (p, i) {
 			return {
