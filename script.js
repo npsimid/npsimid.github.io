@@ -10,6 +10,7 @@ var loadFile = function (event) {
       tag2.id = 'determinare_rasa';
       tag2.type = "button";
       tag2.className = "btn btn-secondary btn-lg btn-block";
+      tag2.onclick='predict()';
       var text = document.createTextNode("Determinare rasă");
       tag2.appendChild(text);
       element.appendChild(tag2);
