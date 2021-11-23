@@ -18,7 +18,7 @@ var model1;
 
 async function predict() {
    console.log("sa incarcat");
-model1 = await tf.loadLayersModel('https://npsimid.github.io/assets/model_json/model.json');
+model1 = await tf.loadGraphModel('https://npsimid.github.io/assets/model_json/model.json');
 console.log("sa incarcat");
 var image = document.getElementById("display_image")  
 var tensorImg =   tf.browser.fromPixels(image).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
