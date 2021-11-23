@@ -21,8 +21,11 @@ async function predict() {
 model1 = await tf.loadGraphModel('https://npsimid.github.io/assets/model_json/model.json');
 console.log("sa incarcat");
 var image = document.getElementById("display_image")  
+console.log("imaginea este");
 var tensorImg =   tf.browser.fromPixels(image).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
+console.log("COnversia este");
   predictions = await model1.predict(tensorImg).data();
+  console.log("predictia este");
 var results = Array.from(predictions)
 		.map(function (p, i) {
 			return {
