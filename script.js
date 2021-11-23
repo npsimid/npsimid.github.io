@@ -1,30 +1,25 @@
 var loadFile = function (event) {
+
    var element1 = document.getElementById('display_image');
-   var element2 = document.getElementById('determinare_rasa');
-   if (element1 == null && element2 == null) {
+   if (element1 == null) {
       var tag = document.createElement("img");
       tag.id = 'display_image';
       var element = document.getElementById("base");
       element.appendChild(tag);
-      var tag2 = document.createElement("button");
-      tag2.id = 'determinare_rasa';
-      tag2.type = "button";
-      tag2.className = "btn btn-secondary btn-lg btn-block";
-      tag2.onclick='predict()';
-      var text = document.createTextNode("Determinare rasă");
-      tag2.appendChild(text);
-      element.appendChild(tag2);
+      element.insertBefore(tag, element.children[3]);
    }
+   document.getElementById("determinare_rasa").removeAttribute("hidden");
+
    var image = document.getElementById('display_image');
    image.src = URL.createObjectURL(event.target.files[0]);
-   console.log(image.getAttribute("src"));
 };
 
 var model1;
 
 async function predict() {
-	model1 = await tf.loadLayersModel('https://npsimid.github.io/assets/model_json/model.json');
-  // action for the submit button
+   console.log("sa incarcat");
+model1 = await tf.loadLayersModel('https://npsimid.github.io/assets/model_json/model.json');
+console.log("sa incarcat");
 var image = document.getElementById("display_image")  
 var tensorImg =   tf.browser.fromPixels(image).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
   predictions = await model1.predict(tensorImg).data();
