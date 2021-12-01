@@ -1,4 +1,3 @@
-import * as tf from "@tensorflow/tfjs"
 var loadFile = function (event) {
 
    var element1 = document.getElementById('display_image');
