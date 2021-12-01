@@ -1,3 +1,4 @@
+import * as tf from "@tensorflow/tfjs"
 var loadFile = function (event) {
 
    var element1 = document.getElementById('display_image');
@@ -17,7 +18,7 @@ var loadFile = function (event) {
 var model1;
 
 async function predict() {
-   console.log("se incarca");
+console.log("se incarca");
 model1 = await tf.loadLayersModel('https://npsimid.github.io/assets/model_json/model.json');
 console.log("sa incarcat");
 var image = document.getElementById("display_image"); 
