@@ -19,17 +19,13 @@ var loadFile = function (event) {
 var model1;
 
 async function predict() {
-console.log("se incarca");
 model1 = await tf.loadLayersModel('https://npsimid.github.io/assets/model_json/model.json');
-console.log("sa incarcat");
 var image = document.getElementById("display_image"); 
-console.log("imaginea este");
 let tensorImg =   tf.browser.fromPixels(image).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
-console.log("Conversia este");
-  predictions = await model1.predict(tensorImg).data();
-  console.log("predictia este");
+predictions = await model1.predict(tensorImg).data();
 var results = Array.from(predictions)
 		.map(function (p, i) {
+			console.log(p+" "+i);
 			return {
 				probability: p,
 				className: CLASSES[i]
