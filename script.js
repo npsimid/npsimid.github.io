@@ -20,7 +20,7 @@ async function predict() {
    console.log("se incarca");
 model1 = await tf.loadLayersModel('https://npsimid.github.io/assets/model_json/model.json');
 console.log("sa incarcat");
-var image = document.getElementById("display_image")  
+var image = document.getElementById("display_image"); 
 console.log("imaginea este");
 var tensorImg1 =   tf.browser.fromPixels(image);
 console.log("tensorImg1");
