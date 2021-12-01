@@ -22,7 +22,9 @@ model1 = await tf.loadLayersModel('https://npsimid.github.io/assets/model_json/m
 console.log("sa incarcat");
 var image = document.getElementById("display_image")  
 console.log("imaginea este");
-var tensorImg =   tf.browser.fromPixels(image).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
+var tensorImg1 =   tf.browser.fromPixels(image);
+console.log(tensorImg1);
+var tensorImg=tensorImg1.resizeNearestNeighbor([224, 224]).toFloat().expandDims();
 console.log("Conversia este");
   predictions = await model1.predict(tensorImg).data();
   console.log("predictia este");
