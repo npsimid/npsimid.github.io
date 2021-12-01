@@ -22,7 +22,7 @@ model1 = await tf.loadLayersModel('https://npsimid.github.io/assets/model_json/m
 console.log("sa incarcat");
 var image = document.getElementById("display_image"); 
 console.log("imaginea este");
-var tensorImg1 =   tf.browser.fromPixels(image);
+var tensorImg1 = tf.browser.fromPixels(image);
 console.log("tensorImg1");
 var tensorImg=tensorImg1.resizeNearestNeighbor([224, 224]).toFloat().expandDims();
 console.log("Conversia este");
