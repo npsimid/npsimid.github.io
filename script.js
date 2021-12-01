@@ -1,5 +1,7 @@
 var loadFile = function (event) {
 
+	document.getElementById("predict-box").style.display = "none";
+
    var element1 = document.getElementById('display_image');
    if (element1 == null) {
       var tag = document.createElement("img");
