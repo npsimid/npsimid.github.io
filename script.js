@@ -23,7 +23,7 @@ console.log("sa incarcat");
 var image = document.getElementById("display_image")  
 console.log("imaginea este");
 var tensorImg1 =   tf.browser.fromPixels(image);
-console.log(tensorImg1);
+console.log("tensorImg1");
 var tensorImg=tensorImg1.resizeNearestNeighbor([224, 224]).toFloat().expandDims();
 console.log("Conversia este");
   predictions = await model1.predict(tensorImg).data();
