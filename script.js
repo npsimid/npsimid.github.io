@@ -22,7 +22,6 @@ async function predict() {
 model1 = await tf.loadGraphModel('https://npsimid.github.io/assets/model_json/model.json');
 var image = document.getElementById("display_image"); 
 let tensorImg =   tf.browser.fromPixels(image).resizeBilinear([224, 224]).div(tf.scalar(255)).toFloat().expandDims();
-console.log(tensorImg);
 predictions = await model1.predict(tensorImg).data();
 var results = Array.from(predictions)
 		.map(function (p, i) {
@@ -40,10 +39,10 @@ var results = Array.from(predictions)
 	var ul = document.getElementById("predict-list");
 	ul.innerHTML = "";
 	results.forEach(function (p) {
-		console.log(p.probability*100+'%');
-		console.log(p.className + " " + p.probability.toFixed(2));
+		var value_prob = p.probability*100;
+		var name_class = p.className.replace("_", " ").toUpperCase();
 		var li = document.createElement("LI");
-		li.innerHTML = p.className + " " + p.probability.toFixed(6);
+		li.innerHTML = name_class + ", probabilitate: " + value_prob.toFixed(2)+'%';
 		ul.appendChild(li);
 	});
 }
