@@ -40,7 +40,8 @@ var results = Array.from(predictions)
 	var ul = document.getElementById("predict-list");
 	ul.innerHTML = "";
 	results.forEach(function (p) {
-		console.log(p.className + " " + p.probability.toFixed(6));
+		console.log(p.probability*100+'%');
+		console.log(p.className + " " + p.probability.toFixed(2));
 		var li = document.createElement("LI");
 		li.innerHTML = p.className + " " + p.probability.toFixed(6);
 		ul.appendChild(li);
