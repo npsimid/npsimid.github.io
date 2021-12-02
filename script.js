@@ -25,7 +25,6 @@ let tensorImg =   tf.browser.fromPixels(image).resizeBilinear([224, 224]).toFloa
 predictions = await model1.predict(tensorImg).data();
 var results = Array.from(predictions)
 		.map(function (p, i) {
-			console.log(p+" "+i);
 			return {
 				probability: p,
 				className: CLASSES[i]
