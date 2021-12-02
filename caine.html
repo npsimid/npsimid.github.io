@@ -25,11 +25,10 @@
             <p><label for="file" style="cursor: pointer;">Încarcă imaginea</label></p>
             <button id="determinare_rasa" type="button" class="btn btn-secondary btn-lg btn-block" onclick='predict()'
                 hidden>Determinare rasă</button>
-            <div class="out-box" id="predict-box" style="display: none;">
+            <div class="out-box" id="predict-box" style="display: none; background-color: white; padding: 1rem">
                 <p id="prediction"></p>
                 <br>
-                <p><b style="color: #c2c2c2 !important; font-style: italic; font-weight: 100; font-size: 11px;">Top-5
-                        Predicții</b></p>
+                <p><b style="color:black; font-style: italic; font-weight: 100; font-size: 16px;">Top-5 Predicții:</b></p>
                 <ul id="predict-list">
                 </ul>
             </div>

@@ -34,7 +34,7 @@ var results = Array.from(predictions)
 		}).slice(0, 5);
 
 	document.getElementById("predict-box").style.display = "block";
-	document.getElementById("prediction").innerHTML = "Rasa prezisă: <br><b>" + results[0].className + "</b>";
+	document.getElementById("prediction").innerHTML = "Rasa prezisă: <br><b>" + results[0].className.toUpperCase() + "</b>";
 
 	var ul = document.getElementById("predict-list");
 	ul.innerHTML = "";
