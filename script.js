@@ -19,7 +19,7 @@ var loadFile = function (event) {
 var model1;
 
 async function predict() {
-model1 = await tf.loadLayersModel('https://npsimid.github.io/assets/model_json/model.json');
+model1 = await tf.loadGraphModel('https://npsimid.github.io/assets/model_json/model.json');
 var image = document.getElementById("display_image"); 
 let tensorImg =   tf.browser.fromPixels(image).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
 predictions = await model1.predict(tensorImg).data();
