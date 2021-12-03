@@ -6,7 +6,7 @@ var loadFile = function (event) {
    if (element1 == null) {
       var tag = document.createElement("img");
       tag.id = 'display_image';
-	  tag.style = "width:100%";
+	  tag.style = "width:100%;  padding: 1%";
       var element = document.getElementById("base");
       element.appendChild(tag);
       element.insertBefore(tag, element.children[3]);
