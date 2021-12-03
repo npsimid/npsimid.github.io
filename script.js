@@ -1,6 +1,7 @@
 var loadFile = function (event) {
 
 	document.getElementById("predict-box").style.display = "none";
+	document.getElementById("predict-box2").style.display = "none";
 
    var element1 = document.getElementById('display_image');
    if (element1 == null) {
@@ -10,8 +11,9 @@ var loadFile = function (event) {
       var element = document.getElementById("base");
       element.appendChild(tag);
       element.insertBefore(tag, element.children[3]);
+	  
    }
-   document.getElementById("determinare_rasa").removeAttribute("hidden");
+   document.getElementById("predict-box2").style.display = "block";
 
    var image = document.getElementById('display_image');
    image.src = URL.createObjectURL(event.target.files[0]);
