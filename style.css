@@ -1,8 +1,6 @@
 
 
-body{
-    background-image: url('all_dogs.png');
-  }
+
 h1 {
     position: relative;
     color: black;  
@@ -13,30 +11,7 @@ h1 {
 #image_input{
     gap: 10px;
 }
-.container{
-    
-    width: 50%;
-    height: 50% ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
-    gap: 10px;
- }
- #display_image{
-  width: 600px;
-  background-position: center;
-  background-size: cover;
-  border: black, solid, 1px;
-}
-#display_image2{
-  width: 500px;
-  height: 500px;
-  background-position: center;
-  background-size: cover;
-  border: black, solid, 1px;
-}
  ::-webkit-file-upload-button {
     background: gray;
     color: white;
