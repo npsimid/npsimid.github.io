@@ -1,3 +1,6 @@
+
+
+
 var loadFile = function (event) {
 
 	document.getElementById("predict-box").style.display = "none";
@@ -37,7 +40,7 @@ var results = Array.from(predictions)
 		}).slice(0, 5);
 
 	document.getElementById("predict-box").style.display = "block";
-	document.getElementById("prediction").innerHTML = "Rasa prezisă: <br><b>" + results[0].className.toUpperCase() + "</b>";
+	document.getElementById("prediction").innerHTML = "<b>Rasa prezisă:</b><h3>" + results[0].className.replace("_", " ").toUpperCase() + "</h3>";
 
 	var ul = document.getElementById("predict-list");
 	ul.innerHTML = "";

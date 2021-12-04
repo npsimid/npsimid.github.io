@@ -69,56 +69,62 @@
         <div class="col-md-10 col-md-offset-1">
 
           <div class="section-container-spacer text-center">
-            <h1 class="h2" style="background-color: aliceblue; opacity: 0.7;"> Aplicație de predicție a rasei câinelui </h1>
+            <h1 class="h2" style="background-color: aliceblue; opacity: 0.7;"> Aplicație de predicție a rasei câinelui
+            </h1>
           </div>
 
           <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-            <div class="text-center" >
+            <div class="text-center">
               <div class="container1" class="text-center"
                 style=" display: flex; align-items: center; flex-direction: column; justify-content: center;background-color: aliceblue; margin-top: 2%; margin-bottom: 1%; border-radius: 2rem;">
-                <h4>Încărcați poza câinelui DVS</h4>
+                <h3>Încărcați poza câinelui DVS</h3>
+                <input id="file" type="file" style='visibility: hidden; height: 1rem;' name="img" accept="image/*" onchange="loadFile(event)" />
+                <input type="button" value="Încarcă imaginea" onclick="javascript:document.getElementById('file').click();" style="margin-bottom: 3%; border-radius: 2rem; font-weight: bold; font-size: 150%; height: 6rem;">
+
+                <!-- Add your content of header 
+                <input id="file" type="file" style="display: none;">
                 <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" hidden /></p>
                 <p><label for="file" style="cursor: pointer;">Încarcă imaginea</label></p>
+-->
               </div>
+
             </div>
           </div>
 
           <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-            <div class="text-center" >
+            <div class="text-center">
               <div class="container1" class="text-center" id="base"
-                style=" display: flex; align-items: center; flex-direction: column; justify-content: center;background-color: aliceblue; margin-top: 2%; margin-bottom: 1%;">
+                style=" display: flex; align-items: center; flex-direction: column; justify-content: center;background-color: aliceblue; margin-bottom: 1%;">
               </div>
             </div>
           </div>
 
           <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-            <div class="text-center" >
+            <div class="text-center">
               <div class="container1" class="text-center"
                 style=" display: flex; align-items: center; flex-direction: column; justify-content: center;background-color: aliceblue; margin-top: 2%; margin-bottom: 1%; border-radius: 2rem;">
                 <div id="predict-box2" style="display: none; background-color: white; padding: 1rem;">
-                  <button  type="button" style="width:100%; display:block; border-radius: 2rem;" onclick='predict()'>Determinare rasă</button>
+                  <button type="button" style="width:100%; height: 6rem; display:block; border-radius: 2rem; font-size: 150%;" onclick='predict()'> <b>Determinare rasă <b> </button>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-            <div class="text-center" >
+            <div class="text-center">
               <div class="container1" class="text-center"
                 style=" display: flex; align-items: center; flex-direction: column; justify-content: center;background-color: aliceblue; margin-top: 2%; margin-bottom: 1%; border-radius: 2rem;">
                 <div class="out-box" id="predict-box" style="display: none; background-color: white; padding: 1rem;">
                   <p id="prediction"></p>
-                  <br>
-                  <p><b style="color:black; font-style: italic; font-weight: 100; font-size: 16px;">Top-5 Predicții:</b>
-                  </p>
-                  <ul id="predict-list">
+                  <p style="color:black; text-align: left;"><b>Top-5 Predicții:</b></p>
+                  <ul id="predict-list" style="text-align: left; font-weight: bold;">
                   </ul>
                 </div>
               </div>
             </div>
           </div>
 
-          
+
 
         </div>
 
