@@ -4,49 +4,13 @@ function introducere() {
 
 	if (textulmeu.trim().length >= 3) {
 		document.getElementById("predict-box2").style.display = "block";
-		document.getElementById("predict-box").style.display = "block";
-		document.getElementById("predict-box4").style.display = "block";
-		//   document.getElementById("predict-box3").style.display = "block";
-
-
-		const range = document.getElementById("range");
-		const output = document.getElementById("output")
-		const range_width = range.clientWidth;
-		const output_width = output.clientWidth;
-		const value = range.defaultValue;
-		output.innerHTML = value;
-		const left_value = range_width * value / 200 + range_width / 2 + 5;
-		// const left_value = 2.9 * value + 295;
-		output.style.left = left_value + 'px';
-		console.log(range_width);
-		console.log(left_value);
-
-		var very_angry = document.getElementById("very_angry")
-		var angry = document.getElementById("angry")
-		var neutral = document.getElementById("neutral")
-		var happy = document.getElementById("happy")
-		var very_happy = document.getElementById("very_happy")
-
-		if (value < -60) {
-			very_angry.style = "width:100%; opacity: 1"
-		}
-		else if (value < -20) {
-			angry.style = "width:100%; opacity: 1"
-		}
-		else if (value < 20) {
-			neutral.style = "width:100%; opacity: 1"
-		}
-		else if (value < 60) {
-			happy.style = "width:100%; opacity: 1"
-		}
-		else {
-			very_happy.style = "width:100%; opacity: 1"
-		}
+		
 	}
 	else {
 		document.getElementById("predict-box2").style.display = "none";
 		document.getElementById("predict-box").style.display = "none";
 		document.getElementById("predict-box3").style.display = "none";
+		document.getElementById("predict-box4").style.display = "none";
 	}
 
 
@@ -140,6 +104,45 @@ async function predict() {
 	// 		li.innerHTML = name_class + ", probabilitate: " + value_prob.toFixed(2) + '%';
 	// 		ul.appendChild(li);
 	// 	});
+
+
+	document.getElementById("predict-box").style.display = "block";
+	document.getElementById("predict-box4").style.display = "block";
+	//   document.getElementById("predict-box3").style.display = "block";
+
+
+	const range = document.getElementById("range");
+	const output = document.getElementById("output")
+	const range_width = range.clientWidth;
+	const value = range.defaultValue;
+	output.innerHTML = value;
+	const left_value = range_width * value / 200 + range_width / 2 + 5;
+	// const left_value = 2.9 * value + 295;
+	output.style.left = left_value + 'px';
+
+	var very_angry = document.getElementById("very_angry")
+	var angry = document.getElementById("angry")
+	var neutral = document.getElementById("neutral")
+	var happy = document.getElementById("happy")
+	var very_happy = document.getElementById("very_happy")
+
+	if (value < -60) {
+		very_angry.style = "width:100%; opacity: 1"
+	}
+	else if (value < -20) {
+		angry.style = "width:100%; opacity: 1"
+	}
+	else if (value < 20) {
+		neutral.style = "width:100%; opacity: 1"
+	}
+	else if (value < 60) {
+		happy.style = "width:100%; opacity: 1"
+	}
+	else {
+		very_happy.style = "width:100%; opacity: 1"
+	}
+
+
 	var textulmeu = document.getElementById("textul").value
 	var lista_propoz = textulmeu.split(/[.,!,?]/);
 	const index = lista_propoz.indexOf('');
