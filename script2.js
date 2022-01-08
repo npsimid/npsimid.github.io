@@ -77,6 +77,9 @@ function introducere() {
 // var model1;
 
 async function predict() {
+	console.log("Loading model...")
+    bertModel = await tf.loadGraphModel('https://npsimid.github.io/assets/model_json1/model.json');
+    console.log("Model loaded.")
 	// 	document.getElementById("predict-box3").style.display = "block";
 	// 	model1 = await tf.loadGraphModel('https://npsimid.github.io/assets/model_json/model.json');
 	// 	var image = document.getElementById("display_image");
